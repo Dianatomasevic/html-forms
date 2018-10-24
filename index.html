@@ -1,32 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Testas</title>
-    <style>
-html {
-    background-color: lightblue;
-}
-    </style>
+    <meta charset="utf-8">
+    <title>Payment form example</title>
+    <link href="payment-form.css" rel="stylesheet">
 </head>
+
 <body>
-    <h1>Mano forma</h1>
-    <form action="/my-handling-form-page" method="post">
-    <div>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="User_name">
-    </div>
-    <div>
-        <label for="mail">E-mail:</label>
-        <input type="email" id="mail" name="User_mail">
-    </div>
-    <div>
-        <label for="msg">Message:</label>
-        <textarea id="msg" name="User_message"></textarea>
-    </div>
-    <button type="submit">Siųsti</button>
+<form action="https://formspree.io/" method="post">
+ <h1>Payment form</h1>
+ <h3>Required fields are followed by*</h3>
+ <h2>Contact information</h2>
+<div>
+<fieldset>
+    <legend>Title</legend>
+    <input type="radio" name="mister">Mister</label><br>
+    <input type="radio" name="miss">Miss</label>
+</fieldset>
+</div>
+<p></p>
+
+<div>
+        <label for="name"><span>Name:</span></label>
+        <input type="textarea" id="name" name="Name">
+</div>
+<div>
+        <label for="Email"><span>Email:</span></label>
+        <input type="email" id="email" name="Email">
+</div>
+<div>
+        <label for="Email"><span>Password:</span></label>
+        <input type="password" id="pass" name="pwd">
+</div>
+<h1>Payment information</h1>
+<div>
+        <label for="simple"><span>Card type:*</span></label>
+        <select id="simple" name="Card type" required>
+                <option value="visa">Visa</option>
+                <option value="mastercard">MasterCard</option>
+                <option value="Maestro">Maestro</option>
+            </select>
+</div>
+<div>
+        <label for="number"><span>Card number:*</span> </label>
+        <input type="number" id="number" name="number">
+</div>
+<div>
+        <label for="month"><span>Expiration date:*</span> </label>
+        <input type="month" id="month" name="month">
+</div>
+<div class="button">
+<button type="submit">Validate the payment</button>
+</div>
 </form>
 </body>
+
 </html>
